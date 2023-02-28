@@ -1,16 +1,16 @@
 {
-    "name": "lintaba/orchid-tables",
+    "name": "uocnv/orchid-tables",
     "description": "An opinionated extension package for Laravel Orchid to extend its table handling capabilities, and some further useful helper methods.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Bálint Vass",
-            "email": "lintaba@gmail.com",
-            "homepage": "https://github.com/lintaba"
+            "name": "Nguyễn Văn Ước",
+            "email": "uocnv.soicy.hust@gmail.com",
+            "homepage": "https://github.com/NguyenUoc98"
         }
     ],
-    "homepage": "https://github.com/lintaba/orchid-tables",
+    "homepage": "https://github.com/NguyenUoc98/orchid-tables",
     "keywords": [
         "Laravel",
         "OrchidTables",
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^8.0|^8.1",
-        "orchid/platform": "^12.0"
+        "orchid/platform": "^12.0|^13.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
