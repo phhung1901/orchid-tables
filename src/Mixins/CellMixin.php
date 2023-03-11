@@ -27,8 +27,9 @@ class CellMixin
             $column = $this->column;
             $format = $format ?: config()->get('orchid-tables.date_format');
             $format = $format ?: config()->get('app.date_format');
+            $timezone = config()->get('app.timezone');
 
-            $this->render(function ($datum) use ($column, $withHumanReadable, $format) {
+            $this->render(function ($datum) use ($column, $withHumanReadable, $format, $timezone) {
                 $value = $datum->getContent($column);
                 if (blank($value)) {
                     return '';
@@ -48,8 +49,8 @@ class CellMixin
 
                 $format        = $format ?: (($date->year < now()->year) ? 'Y-' : '')
                     . 'm-d' . DataHelpers::NBSP . DataHelpers::NBSP . 'H:i';
-                $formatted     = $date->format($format);
-                $dateAtom      = $date->format(DateTimeInterface::ATOM);
+                $formatted     = $date->timezone($timezone)->format($format);
+                $dateAtom      = $date->timezone($timezone)->format(DateTimeInterface::ATOM);
                 $humanReadable = $withHumanReadable ? sprintf(
                     '<br><span class="text-muted">%s</span>',
                     $date->diffForHumans()
